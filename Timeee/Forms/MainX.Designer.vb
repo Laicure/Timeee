@@ -97,6 +97,7 @@ Partial Class MainX
 		Me.LbLastLocked.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.LbLastLocked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.LbLastLocked.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.LbLastLocked.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.LbLastLocked.Location = New System.Drawing.Point(100, 15)
 		Me.LbLastLocked.Margin = New System.Windows.Forms.Padding(0)

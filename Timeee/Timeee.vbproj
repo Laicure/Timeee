@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\LastLockeds.Designer.vb">
+      <DependentUpon>LastLockeds.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LastLockeds.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\MainX.Designer.vb">
       <DependentUpon>MainX.vb</DependentUpon>
     </Compile>
@@ -95,6 +101,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\LastLockeds.resx">
+      <DependentUpon>LastLockeds.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainX.resx">
       <DependentUpon>MainX.vb</DependentUpon>
     </EmbeddedResource>

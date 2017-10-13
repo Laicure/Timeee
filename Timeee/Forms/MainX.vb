@@ -5,6 +5,7 @@
 
 	Dim TimeLocked As DateTime = Nothing
 	Dim TotalLastLocked As TimeSpan = Nothing
+	Dim LastLockedz As New HashSet(Of String)
 
 	Dim TotalUnlocked As TimeSpan = Nothing
 
@@ -44,6 +45,7 @@
 			Dim timLocked As TimeSpan = DateTime.Now.Subtract(TimeLocked)
 			TotalLastLocked = TotalLastLocked.Add(timLocked)
 			LbLastLocked.Text = timLocked.Days.ToString("d2") & "d " & timLocked.Hours.ToString("d2") & "h " & timLocked.Minutes.ToString("d2") & "m " & timLocked.Seconds.ToString("d2") & "s"
+			LastLockedz.Add("[" & Format(Now, "yyyy-MM-dd hh:mm:ss.fff tt") & "]" & vbCrLf & LbLastLocked.Text)
 			LbTotalLocked.Text = TotalLastLocked.Days.ToString("d2") & "d " & TotalLastLocked.Hours.ToString("d2") & "h " & TotalLastLocked.Minutes.ToString("d2") & "m " & TotalLastLocked.Seconds.ToString("d2") & "s"
 		End If
 	End Sub
@@ -85,6 +87,13 @@
 			Me.Show()
 			Me.Activate()
 		End If
+	End Sub
+
+	Private Sub LbLastLocked_Click(sender As Object, e As EventArgs) Handles LbLastLocked.Click
+		If LastLockedz.Count = 0 Then Exit Sub
+		If Not LastLockeds.Visible Then LastLockeds.Show(Me)
+		LastLockeds.txLastLockLogz.Text = String.Join(vbCrLf, LastLockedz)
+		LastLockeds.Activate()
 	End Sub
 
 End Class
