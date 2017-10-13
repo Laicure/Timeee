@@ -44,12 +44,12 @@ Partial Class MainX
 		'
 		Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label1.Location = New System.Drawing.Point(66, 1)
+		Me.Label1.Location = New System.Drawing.Point(20, 1)
 		Me.Label1.Margin = New System.Windows.Forms.Padding(0)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(35, 15)
+		Me.Label1.Size = New System.Drawing.Size(81, 15)
 		Me.Label1.TabIndex = 0
-		Me.Label1.Text = "App"
+		Me.Label1.Text = "App Runtime"
 		Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
 		'LbAppTotal
@@ -58,6 +58,7 @@ Partial Class MainX
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.LbAppTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.LbAppTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.LbAppTotal.ForeColor = System.Drawing.Color.Blue
 		Me.LbAppTotal.Location = New System.Drawing.Point(100, 1)
 		Me.LbAppTotal.Margin = New System.Windows.Forms.Padding(0)
 		Me.LbAppTotal.Name = "LbAppTotal"
@@ -72,7 +73,8 @@ Partial Class MainX
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.LbTotalLocked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.LbTotalLocked.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.LbTotalLocked.Location = New System.Drawing.Point(100, 29)
+		Me.LbTotalLocked.ForeColor = System.Drawing.Color.Crimson
+		Me.LbTotalLocked.Location = New System.Drawing.Point(100, 43)
 		Me.LbTotalLocked.Margin = New System.Windows.Forms.Padding(0)
 		Me.LbTotalLocked.Name = "LbTotalLocked"
 		Me.LbTotalLocked.Size = New System.Drawing.Size(108, 15)
@@ -84,7 +86,7 @@ Partial Class MainX
 		'
 		Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label4.Location = New System.Drawing.Point(1, 29)
+		Me.Label4.Location = New System.Drawing.Point(1, 43)
 		Me.Label4.Margin = New System.Windows.Forms.Padding(0)
 		Me.Label4.Name = "Label4"
 		Me.Label4.Size = New System.Drawing.Size(100, 15)
@@ -99,7 +101,8 @@ Partial Class MainX
 		Me.LbLastLocked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.LbLastLocked.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.LbLastLocked.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.LbLastLocked.Location = New System.Drawing.Point(100, 15)
+		Me.LbLastLocked.ForeColor = System.Drawing.Color.Red
+		Me.LbLastLocked.Location = New System.Drawing.Point(100, 29)
 		Me.LbLastLocked.Margin = New System.Windows.Forms.Padding(0)
 		Me.LbLastLocked.Name = "LbLastLocked"
 		Me.LbLastLocked.Size = New System.Drawing.Size(108, 15)
@@ -111,7 +114,7 @@ Partial Class MainX
 		'
 		Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label6.Location = New System.Drawing.Point(1, 15)
+		Me.Label6.Location = New System.Drawing.Point(1, 29)
 		Me.Label6.Margin = New System.Windows.Forms.Padding(0)
 		Me.Label6.Name = "Label6"
 		Me.Label6.Size = New System.Drawing.Size(100, 15)
@@ -125,7 +128,8 @@ Partial Class MainX
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.LbTotalUnlocked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.LbTotalUnlocked.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.LbTotalUnlocked.Location = New System.Drawing.Point(100, 43)
+		Me.LbTotalUnlocked.ForeColor = System.Drawing.Color.Green
+		Me.LbTotalUnlocked.Location = New System.Drawing.Point(100, 15)
 		Me.LbTotalUnlocked.Margin = New System.Windows.Forms.Padding(0)
 		Me.LbTotalUnlocked.Name = "LbTotalUnlocked"
 		Me.LbTotalUnlocked.Size = New System.Drawing.Size(108, 15)
@@ -137,12 +141,12 @@ Partial Class MainX
 		'
 		Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Label3.Location = New System.Drawing.Point(1, 43)
+		Me.Label3.Location = New System.Drawing.Point(1, 15)
 		Me.Label3.Margin = New System.Windows.Forms.Padding(0)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(100, 15)
 		Me.Label3.TabIndex = 6
-		Me.Label3.Text = "Total Unlocked"
+		Me.Label3.Text = "Unlocked"
 		Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
 		'LbManualAuto
@@ -151,14 +155,14 @@ Partial Class MainX
 		Me.LbManualAuto.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.LbManualAuto.Enabled = False
 		Me.LbManualAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.LbManualAuto.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Italic)
+		Me.LbManualAuto.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.LbManualAuto.ForeColor = System.Drawing.Color.Red
 		Me.LbManualAuto.Location = New System.Drawing.Point(1, 1)
 		Me.LbManualAuto.Margin = New System.Windows.Forms.Padding(0)
 		Me.LbManualAuto.Name = "LbManualAuto"
-		Me.LbManualAuto.Size = New System.Drawing.Size(66, 15)
+		Me.LbManualAuto.Size = New System.Drawing.Size(20, 15)
 		Me.LbManualAuto.TabIndex = 8
-		Me.LbManualAuto.Text = "Manual"
+		Me.LbManualAuto.Text = "M"
 		Me.LbManualAuto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
 		'notIcon
@@ -186,12 +190,11 @@ Partial Class MainX
 		Me.ForeColor = System.Drawing.Color.Black
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
 		Me.MaximizeBox = False
-		Me.MaximumSize = New System.Drawing.Size(225, 98)
 		Me.MinimizeBox = False
 		Me.MinimumSize = New System.Drawing.Size(225, 98)
 		Me.Name = "MainX"
 		Me.Padding = New System.Windows.Forms.Padding(1)
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
 		Me.Text = "MainX"
 		Me.TopMost = True
 		Me.ResumeLayout(False)

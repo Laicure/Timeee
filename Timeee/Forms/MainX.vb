@@ -12,8 +12,12 @@
 	Dim urlxx As String = "C:\Users\" & Environment.UserName & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Timeee.url"
 
 	Private Sub MainX_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Me.Text = "Timeee v" & My.Application.Info.Version.ToString
 		StartTime = Now
+		Me.Text = "Timeee v" & My.Application.Info.Version.ToString
+
+		'start at bottom-right
+		Me.Top = My.Computer.Screen.WorkingArea.Height - Me.Height
+		Me.Left = My.Computer.Screen.WorkingArea.Width - Me.Width
 
 		'Handler for PC Locking
 		AddHandler Microsoft.Win32.SystemEvents.SessionSwitch, AddressOf CheckLock
@@ -23,7 +27,7 @@
 		'update auto-start url
 		If My.Computer.FileSystem.FileExists(urlxx) Then
 			My.Computer.FileSystem.WriteAllText(urlxx, "[InternetShortcut]" & vbCrLf & "URL=file:///" & Replace(System.Reflection.Assembly.GetExecutingAssembly().Location, "\", "/"), False)
-			LbManualAuto.Text = "Auto"
+			LbManualAuto.Text = "A"
 			LbManualAuto.ForeColor = Color.Green
 		End If
 		LbManualAuto.Enabled = True
@@ -33,6 +37,11 @@
 	End Sub
 
 	Private Sub MainX_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+		If MessageBox.Show("Are you sure to close Timeee?", "Confirm Exit!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.No Then
+			e.Cancel = True
+			Exit Sub
+		End If
+
 		Me.Hide()
 	End Sub
 
@@ -61,9 +70,9 @@
 	End Sub
 
 	Private Sub LbManualAuto_Click(sender As Object, e As EventArgs) Handles LbManualAuto.Click
-		If LbManualAuto.Text = "Manual" Then
+		If LbManualAuto.Text = "M" Then
 			If MessageBox.Show("Are you sure to set the app to auto-start with your PC?", "Auto?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.Yes Then
-				LbManualAuto.Text = "Auto"
+				LbManualAuto.Text = "A"
 				LbManualAuto.ForeColor = Color.Green
 
 				'update auto-start url
@@ -72,7 +81,7 @@
 				End If
 			End If
 		Else
-			LbManualAuto.Text = "Manual"
+			LbManualAuto.Text = "M"
 			LbManualAuto.ForeColor = Color.Red
 			If My.Computer.FileSystem.FileExists(urlxx) Then
 				My.Computer.FileSystem.DeleteFile(urlxx, FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently, FileIO.UICancelOption.DoNothing)
@@ -89,11 +98,12 @@
 		End If
 	End Sub
 
-	Private Sub LbLastLocked_Click(sender As Object, e As EventArgs) Handles LbLastLocked.Click
-		If LastLockedz.Count = 0 Then Exit Sub
-		If Not LastLockeds.Visible Then LastLockeds.Show(Me)
-		LastLockeds.txLastLockLogz.Text = String.Join(vbCrLf, LastLockedz)
-		LastLockeds.Activate()
+	Private Sub LbLastLocked_MouseDown(sender As Object, e As MouseEventArgs) Handles LbLastLocked.MouseDown
+		If e.Button = System.Windows.Forms.MouseButtons.Right Then
+			If LastLockedz.Count = 0 Then Exit Sub
+			If Not LastLockeds.Visible Then LastLockeds.Show(Me)
+			LastLockeds.txLastLockLogz.Text = String.Join(vbCrLf, LastLockedz)
+			LastLockeds.Activate()
+		End If
 	End Sub
-
 End Class

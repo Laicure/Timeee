@@ -51,7 +51,7 @@ Partial Class LastLockeds
 		Me.Name = "LastLockeds"
 		Me.Padding = New System.Windows.Forms.Padding(1)
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-		Me.Text = "Last Lockeds"
+		Me.Text = "Last Locked Logs"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
