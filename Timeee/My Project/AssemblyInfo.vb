@@ -13,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyCompany("CodeMock")> 
 <Assembly: AssemblyProduct("Timeee")> 
 <Assembly: AssemblyCopyright("Copyright © 2017")> 
-<Assembly: AssemblyTrademark("Laicure Leviare Icarus")> 
+<Assembly: AssemblyTrademark("Laicure Leviare")> 
 
 <Assembly: ComVisible(False)> 
 
