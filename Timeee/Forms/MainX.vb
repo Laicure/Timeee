@@ -13,6 +13,7 @@
 
 	Private Sub MainX_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		StartTime = Now
+		TimeLocked = Now
 		Me.Text = "Timeee v" & My.Application.Info.Version.ToString
 
 		'start at bottom-right
@@ -37,10 +38,10 @@
 	End Sub
 
 	Private Sub MainX_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-		If MessageBox.Show("Are you sure to close Timeee?", "Confirm Exit!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.No Then
-			e.Cancel = True
-			Exit Sub
-		End If
+		'If MessageBox.Show("Are you sure to close Timeee?", "Confirm Exit!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.No Then
+		'	e.Cancel = True
+		'	Exit Sub
+		'End If
 
 		Me.Hide()
 	End Sub
