@@ -55,7 +55,7 @@
 			Dim timLocked As TimeSpan = DateTime.Now.Subtract(TimeLocked)
 			TotalLastLocked = TotalLastLocked.Add(timLocked)
 			LbLastLocked.Text = timLocked.Days.ToString("d2") & "d " & timLocked.Hours.ToString("d2") & "h " & timLocked.Minutes.ToString("d2") & "m " & timLocked.Seconds.ToString("d2") & "s"
-			LastLockedz.Add("[" & Format(Now, "yyyy-MM-dd hh:mm:ss.fff tt") & "]" & vbCrLf & LbLastLocked.Text)
+			LastLockedz.Add("[" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff tt", Globalization.CultureInfo.InvariantCulture) & "]" & vbCrLf & LbLastLocked.Text)
 			LbTotalLocked.Text = TotalLastLocked.Days.ToString("d2") & "d " & TotalLastLocked.Hours.ToString("d2") & "h " & TotalLastLocked.Minutes.ToString("d2") & "m " & TotalLastLocked.Seconds.ToString("d2") & "s"
 		End If
 	End Sub
