@@ -1,13 +1,15 @@
 ﻿Public Class MainX
 	Dim Locked As Boolean = False
 
-	Dim StartTime As DateTime = Nothing
+	Dim StartTime As DateTime = Now
 
-	Dim TimeLocked As DateTime = Nothing
+	Dim TimeLocked As DateTime = Now
 	Dim TotalLastLocked As TimeSpan = Nothing
 	Dim LastLockedz As New HashSet(Of String)
 
 	Dim TotalUnlocked As TimeSpan = Nothing
+
+	Dim notif As Boolean = False
 
 	Dim urlxx As String = "C:\Users\" & Environment.UserName & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Timeee.url"
 
@@ -50,13 +52,16 @@
 		If e.Reason = Microsoft.Win32.SessionSwitchReason.SessionLock Then
 			Locked = True
 			TimeLocked = Now
+			If LastLockeds.Visible Then LastLockeds.Close()
 		Else
 			Locked = False
 			Dim timLocked As TimeSpan = DateTime.Now.Subtract(TimeLocked)
 			TotalLastLocked = TotalLastLocked.Add(timLocked)
 			LbLastLocked.Text = timLocked.Days.ToString("d2") & "d " & timLocked.Hours.ToString("d2") & "h " & timLocked.Minutes.ToString("d2") & "m " & timLocked.Seconds.ToString("d2") & "s"
-			LastLockedz.Add("[" & DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.fff tt", Globalization.CultureInfo.InvariantCulture) & "]" & vbCrLf & LbLastLocked.Text)
+			LastLockedz.Add("[" & DateTime.Now.ToString("hh:mm:ss tt", Globalization.CultureInfo.InvariantCulture) & "]" & vbCrLf & LbLastLocked.Text)
 			LbTotalLocked.Text = TotalLastLocked.Days.ToString("d2") & "d " & TotalLastLocked.Hours.ToString("d2") & "h " & TotalLastLocked.Minutes.ToString("d2") & "m " & TotalLastLocked.Seconds.ToString("d2") & "s"
+
+			If notif Then notIcon.ShowBalloonTip(7777, "Away", LbLastLocked.Text, ToolTipIcon.Info)
 		End If
 	End Sub
 
@@ -99,12 +104,22 @@
 		End If
 	End Sub
 
-	Private Sub LbLastLocked_MouseDown(sender As Object, e As MouseEventArgs) Handles LbLastLocked.MouseDown
-		If e.Button = System.Windows.Forms.MouseButtons.Right Then
-			If LastLockedz.Count = 0 Then Exit Sub
-			If Not LastLockeds.Visible Then LastLockeds.Show(Me)
-			LastLockeds.txLastLockLogz.Text = String.Join(vbCrLf, LastLockedz)
-			LastLockeds.Activate()
+	Private Sub lbHistory_Click(sender As Object, e As EventArgs) Handles lbHistory.Click
+		If LastLockedz.Count = 0 Then Exit Sub
+		If Not LastLockeds.Visible Then LastLockeds.Show(Me)
+		LastLockeds.txLastLockLogz.Text = String.Join(vbCrLf & vbCrLf, LastLockedz)
+		LastLockeds.Activate()
+	End Sub
+
+	Private Sub lbNotify_Click(sender As Object, e As EventArgs) Handles lbNotify.Click
+		If lbNotify.Text = "S" Then
+			lbNotify.Text = "N"
+			lbNotify.ForeColor = Color.Green
+			notif = True
+		Else
+			lbNotify.Text = "S"
+			lbNotify.ForeColor = Color.Red
+			notif = False
 		End If
 	End Sub
 End Class

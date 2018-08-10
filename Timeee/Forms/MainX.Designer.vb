@@ -34,6 +34,8 @@ Partial Class MainX
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.LbManualAuto = New System.Windows.Forms.Label()
 		Me.notIcon = New System.Windows.Forms.NotifyIcon(Me.components)
+		Me.lbHistory = New System.Windows.Forms.Label()
+		Me.lbNotify = New System.Windows.Forms.Label()
 		Me.SuspendLayout()
 		'
 		'timm
@@ -49,7 +51,7 @@ Partial Class MainX
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(81, 15)
 		Me.Label1.TabIndex = 0
-		Me.Label1.Text = "App Runtime"
+		Me.Label1.Text = "Runtime"
 		Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
 		'LbAppTotal
@@ -91,7 +93,7 @@ Partial Class MainX
 		Me.Label4.Name = "Label4"
 		Me.Label4.Size = New System.Drawing.Size(100, 15)
 		Me.Label4.TabIndex = 2
-		Me.Label4.Text = "Total Locked"
+		Me.Label4.Text = "Total Away"
 		Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
 		'LbLastLocked
@@ -99,7 +101,6 @@ Partial Class MainX
 		Me.LbLastLocked.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.LbLastLocked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.LbLastLocked.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.LbLastLocked.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.LbLastLocked.ForeColor = System.Drawing.Color.Red
 		Me.LbLastLocked.Location = New System.Drawing.Point(100, 29)
@@ -119,7 +120,7 @@ Partial Class MainX
 		Me.Label6.Name = "Label6"
 		Me.Label6.Size = New System.Drawing.Size(100, 15)
 		Me.Label6.TabIndex = 4
-		Me.Label6.Text = "Last Locked"
+		Me.Label6.Text = "Last Away"
 		Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
 		'LbTotalUnlocked
@@ -146,7 +147,7 @@ Partial Class MainX
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(100, 15)
 		Me.Label3.TabIndex = 6
-		Me.Label3.Text = "Unlocked"
+		Me.Label3.Text = "Active"
 		Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		'
 		'LbManualAuto
@@ -170,12 +171,44 @@ Partial Class MainX
 		Me.notIcon.Text = "Timeee show/hide"
 		Me.notIcon.Visible = True
 		'
+		'lbHistory
+		'
+		Me.lbHistory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lbHistory.Cursor = System.Windows.Forms.Cursors.Hand
+		Me.lbHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.lbHistory.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.lbHistory.ForeColor = System.Drawing.Color.Purple
+		Me.lbHistory.Location = New System.Drawing.Point(1, 29)
+		Me.lbHistory.Margin = New System.Windows.Forms.Padding(0)
+		Me.lbHistory.Name = "lbHistory"
+		Me.lbHistory.Size = New System.Drawing.Size(20, 15)
+		Me.lbHistory.TabIndex = 9
+		Me.lbHistory.Text = "H"
+		Me.lbHistory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
+		'lbNotify
+		'
+		Me.lbNotify.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lbNotify.Cursor = System.Windows.Forms.Cursors.Hand
+		Me.lbNotify.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.lbNotify.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.lbNotify.ForeColor = System.Drawing.Color.Red
+		Me.lbNotify.Location = New System.Drawing.Point(1, 15)
+		Me.lbNotify.Margin = New System.Windows.Forms.Padding(0)
+		Me.lbNotify.Name = "lbNotify"
+		Me.lbNotify.Size = New System.Drawing.Size(20, 15)
+		Me.lbNotify.TabIndex = 10
+		Me.lbNotify.Text = "S"
+		Me.lbNotify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+		'
 		'MainX
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.Color.White
 		Me.ClientSize = New System.Drawing.Size(209, 59)
+		Me.Controls.Add(Me.lbNotify)
+		Me.Controls.Add(Me.lbHistory)
 		Me.Controls.Add(Me.LbManualAuto)
 		Me.Controls.Add(Me.LbTotalUnlocked)
 		Me.Controls.Add(Me.Label3)
@@ -211,4 +244,6 @@ Partial Class MainX
 	Friend WithEvents Label3 As System.Windows.Forms.Label
 	Friend WithEvents LbManualAuto As System.Windows.Forms.Label
 	Friend WithEvents notIcon As System.Windows.Forms.NotifyIcon
+	Friend WithEvents lbHistory As Label
+	Friend WithEvents lbNotify As Label
 End Class

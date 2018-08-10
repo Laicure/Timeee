@@ -1,5 +1,4 @@
-﻿Imports System
-Imports System.Reflection
+﻿Imports System.Reflection
 Imports System.Runtime.InteropServices
 
 ' General Information about an assembly is controlled through the following
@@ -8,17 +7,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Timeee")> 
-<Assembly: AssemblyDescription("Just a timer :P")> 
-<Assembly: AssemblyCompany("CodeMock")> 
-<Assembly: AssemblyProduct("Timeee")> 
-<Assembly: AssemblyCopyright("Copyright © 2017")> 
-<Assembly: AssemblyTrademark("Laicure Leviare")> 
+<Assembly: AssemblyTitle("Timeee")>
+<Assembly: AssemblyDescription("Just a timer :P")>
+<Assembly: AssemblyCompany("CodeMock")>
+<Assembly: AssemblyProduct("Timeee")>
+<Assembly: AssemblyCopyright("Copyright © 2017")>
+<Assembly: AssemblyTrademark("Laicure Leviare")>
 
-<Assembly: ComVisible(False)> 
+<Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("50695c5e-9e87-49c6-b790-62288a897abb")> 
+<Assembly: Guid("50695c5e-9e87-49c6-b790-62288a897abb")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,5 +30,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.*")> 
-<Assembly: Resources.NeutralResourcesLanguage("en")> 
+<Assembly: AssemblyVersion("1.0.*")>
+<Assembly: Resources.NeutralResourcesLanguage("en")>
