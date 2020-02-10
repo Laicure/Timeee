@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Just a timer :P")>
 <Assembly: AssemblyCompany("CodeMock")>
 <Assembly: AssemblyProduct("Timeee")>
-<Assembly: AssemblyCopyright("Copyright © 2017")>
+<Assembly: AssemblyCopyright("Copyright © 2020")>
 <Assembly: AssemblyTrademark("Laicure Leviare")>
 
 <Assembly: ComVisible(False)>
@@ -28,7 +28,7 @@ Imports System.Runtime.InteropServices
 '
 ' You can specify all the values or you can default the Build and Revision Numbers
 ' by using the '*' as shown below:
-' <Assembly: AssemblyVersion("1.0.*")>
+' <Assembly: AssemblyVersion("2020.2.10")>
 
-<Assembly: AssemblyVersion("1.0.*")>
+<Assembly: AssemblyVersion("2020.2.10.22087")>
 <Assembly: Resources.NeutralResourcesLanguage("en")>

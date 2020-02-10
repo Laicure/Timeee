@@ -5,13 +5,13 @@
 
 	Dim TimeLocked As DateTime = Now
 	Dim TotalLastLocked As TimeSpan = Nothing
-	Dim LastLockedz As New HashSet(Of String)
+	ReadOnly LastLockedz As New HashSet(Of String)
 
 	Dim TotalUnlocked As TimeSpan = Nothing
 
 	Dim notif As Boolean = False
 
-	Dim urlxx As String = "C:\Users\" & Environment.UserName & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Timeee.url"
+	ReadOnly urlxx As String = "C:\Users\" & Environment.UserName & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Timeee.url"
 
 	Private Sub MainX_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		StartTime = Now
@@ -65,7 +65,7 @@
 		End If
 	End Sub
 
-	Private Sub timm_Tick(sender As Object, e As EventArgs) Handles timm.Tick
+	Private Sub Timm_Tick(sender As Object, e As EventArgs) Handles timm.Tick
 		Dim AppTotal As TimeSpan = DateTime.Now.Subtract(StartTime)
 		LbAppTotal.Text = AppTotal.Days.ToString("d2") & "d " & AppTotal.Hours.ToString("d2") & "h " & AppTotal.Minutes.ToString("d2") & "m " & AppTotal.Seconds.ToString("d2") & "s"
 
@@ -95,7 +95,7 @@
 		End If
 	End Sub
 
-	Private Sub notIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles notIcon.MouseDoubleClick
+	Private Sub NotIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles notIcon.MouseDoubleClick
 		If Me.Visible Then
 			Me.Hide()
 		Else
@@ -104,14 +104,14 @@
 		End If
 	End Sub
 
-	Private Sub lbHistory_Click(sender As Object, e As EventArgs) Handles lbHistory.Click
+	Private Sub LbHistory_Click(sender As Object, e As EventArgs) Handles lbHistory.Click
 		If LastLockedz.Count = 0 Then Exit Sub
 		If Not LastLockeds.Visible Then LastLockeds.Show(Me)
-		LastLockeds.txLastLockLogz.Text = String.Join(vbCrLf & vbCrLf, LastLockedz)
+		LastLockeds.txLastLockLogz.Text = String.Join(vbCrLf, LastLockedz)
 		LastLockeds.Activate()
 	End Sub
 
-	Private Sub lbNotify_Click(sender As Object, e As EventArgs) Handles lbNotify.Click
+	Private Sub LbNotify_Click(sender As Object, e As EventArgs) Handles lbNotify.Click
 		If lbNotify.Text = "S" Then
 			lbNotify.Text = "N"
 			lbNotify.ForeColor = Color.Green
@@ -122,4 +122,5 @@
 			notif = False
 		End If
 	End Sub
+
 End Class
