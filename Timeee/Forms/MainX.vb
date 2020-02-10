@@ -40,12 +40,7 @@
 	End Sub
 
 	Private Sub MainX_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-		'If MessageBox.Show("Are you sure to close Timeee?", "Confirm Exit!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.No Then
-		'	e.Cancel = True
-		'	Exit Sub
-		'End If
-
-		Me.Hide()
+		If MessageBox.Show("Are you sure to close Timeee?", "Confirm Exit!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = System.Windows.Forms.DialogResult.No Then e.Cancel = True
 	End Sub
 
 	Private Sub CheckLock(ByVal sender As Object, ByVal e As Microsoft.Win32.SessionSwitchEventArgs)
